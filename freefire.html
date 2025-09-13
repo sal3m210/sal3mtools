@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شدات ببجي</title>
+<style>
+    body {
+        background-color: #f0f2f5;
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2 {
+        margin: 10px 20px;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: 20px;
+        gap: 10px;
+    }
+
+    .box1 {
+        display: block;
+        background-color: aquamarine;
+        padding: 10px;
+        max-width: 120px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        margin: 10px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .box1:hover{
+        transform: scale(1.1);
+    }
+
+    .box1 img {
+        width: 100%;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    .box1 b {
+        display: block;
+        font-weight: bold;
+    }
+
+    .order-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 350px;
+        margin: 20px auto;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        display: none; /* يظل مخفي حتى يضغط المستخدم على بطاقة */
+    }
+
+    .order-form input, .order-form select {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .order-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: aquamarine;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    .order-form button:hover {
+        background-color: #7fffd4;
+    }
+
+    .confirmation {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        margin-top: 10px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center;">جواهر فري فاير</h1>
+<h2 style="text-align:right;margin-right:20px;">اختر الكمية</h2>
+
+<div class="cards">
+    <div class="box1" onclick="showForm('110/5₪')">
+        <img src="freefire.png" alt="">
+        <b>110/5₪</b>
+    </div>
+    <div class="box1" onclick="showForm('210/12₪')">
+        <img src="freefire.png" alt="">
+        <b>210/12₪</b>
+    </div>
+    <div class="box1" onclick="showForm('530/25₪')">
+        <img src="freefire.png" alt="">
+        <b>530/25₪</b>
+    </div>
+    <div class="box1" onclick="showForm('1080/50₪')">
+        <img src="freefire.png" alt="">
+        <b>1080/50₪</b>
+    </div>
+</div>
+
+<!-- نموذج الطلب يظهر أسفل البطاقات -->
+<div class="order-form" id="orderFormContainer">
+    <h3>أكمل الطلب</h3>
+    <form id="orderForm" action="https://formspree.io/f/meoldvey" method="POST" target="_blank">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="text" name="whatsapp" placeholder="رقم واتساب" required>
+        <input type="text" name="pubgId" placeholder="ID فري فاير" required>
+        <input type="hidden" name="uc" id="ucInput">
+        <select name="payment">
+            <option value="اوريديو">اوريديو</option>
+            <option value="جوال">جوال</option>
+            <option value="كاش">كاش</option>
+            <option value="Paypal">Paypal</option>
+        </select>
+        <button type="submit">إرسال الطلب</button>
+    </form>
+    <div class="confirmation" id="confirmation">تم إرسال الطلب! سيتم التواصل عبر واتساب.</div>
+</div>
+
+<script>
+    function showForm(uc){
+        document.getElementById('ucInput').value = uc;
+        document.getElementById('orderFormContainer').style.display = 'block';
+        document.getElementById('confirmation').style.display = 'none';
+        window.scrollTo({ top: document.getElementById('orderFormContainer').offsetTop, behavior: 'smooth' });
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const form = e.target;
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if(response.ok){
+                document.getElementById('confirmation').style.display = 'block';
+                form.reset();
+            } else {
+                alert('حدث خطأ، حاول مرة أخرى');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
