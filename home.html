@@ -37,6 +37,8 @@
             justify-content: center;
             gap: 15px; /* المسافة بين الأزرار */
             flex-wrap: wrap; /* للانتقال لسطر ثاني إذا صغرت الشاشة */
+            width: 100%;
+            max-width: 900px; /* عرض الحاوية الأكبر */
         }
 
         .box1 {
@@ -47,12 +49,37 @@
             color: #000;
             font-weight: bold;
             transition: 0.3s;
-            min-width: 180px;
             text-align: center;
+
+            flex: 1 1 180px; /* يسمح للأزرار بالتقلص والنمو حسب حجم الشاشة */
+            max-width: 220px; /* أقصى عرض للأزرار */
+            box-sizing: border-box;
         }
 
         .box1:hover {
             background-color: rgb(140, 230, 180);
+        }
+
+        .box2 {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .box2 a {
+            text-decoration: none;
+            color: #5865F2;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .box2 b {
+            color: #000;
+        }
+
+        @media (max-width: 500px) {
+            .box1 {
+                flex: 1 1 100%; /* الأزرار تأخذ كامل العرض على الشاشات الصغيرة */
+            }
         }
     </style>
 </head>
@@ -63,7 +90,7 @@
 
     <div class="buttons-container">
         <a target="_blank" class="box1" href="https://record1.netlify.app/">
-            مسجل شاشة موفر للبيانات
+            مسجل شاشة
         </a>
         <a target="_blank" class="box1" href="https://download12.netlify.app/pass">
             منشئ كلمات سر
@@ -71,25 +98,17 @@
         <a download="" class="box1" href="download.rar">
             اداة تنظيف الكمبيوتر
         </a>
-        <a href="">
-
+        <a class="box1" href="pubg.html">
+            شدات ببجي
         </a>
     </div>
-    <style>
-        .box2{
-            
-            margin-top: 650px;
-            margin-left: auto;
 
-            
-        }
-    </style>
     <div class="box2">
-        <a  href="https://discord.gg/pA7qqtWPM6">discord</a>
+        <a href="https://discord.gg/pA7qqtWPM6">discord</a>
         <b>للتواصل</b>
-        
     </div>
 </body>
 </html>
+
 
 
