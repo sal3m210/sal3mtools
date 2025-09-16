@@ -1,116 +1,117 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sal3m Tools</title>
-    <link rel="icon" type="png" href="icon.png">
-    <meta name="description" content="موقع يجمع لك مزيج من الخدمات من جميع الانواع من صنع sal3m">
-    <meta name="keywords" content="sal3mTools,sal3m,tools,ادوات,مونتاج,محتوى">
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sal3m Tools</title>
+  <link rel="icon" href="icon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            font-weight: bold;
-            text-align: center;
-        }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+    }
 
-        h3 {
-            text-align: center;
-        }
+    .navbar {
+      background-color: #ddd;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+    }
 
-        hr {
-            width: 80%;
-            margin: 20px 0;
-        }
+    .navbar a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      padding: 5px 10px;
+      transition: 0.3s;
+    }
 
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px; /* المسافة بين الأزرار */
-            flex-wrap: wrap; /* للانتقال لسطر ثاني إذا صغرت الشاشة */
-            width: 100%;
-            max-width: 900px; /* عرض الحاوية الأكبر */
-        }
+    .navbar a:hover {
+      background: #bbb;
+      border-radius: 5px;
+    }
 
-        .box1 {
-            background-color: rgb(177, 255, 210);
-            padding: 15px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            transition: 0.3s;
-            text-align: center;
+    .navbar img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
 
-            flex: 1 1 180px; /* يسمح للأزرار بالتقلص والنمو حسب حجم الشاشة */
-            max-width: 220px; /* أقصى عرض للأزرار */
-            box-sizing: border-box;
-        }
+    /* القوائم المنسدلة */
+    .dropdown {
+      position: relative;
+    }
 
-        .box1 img {
-            width: 130px;  /* نفس الحجم لكل الصور */
-            height: auto;
-            display: block;
-            margin: 0 auto 10px; /* توسيط الصورة وإضافة مسافة أسفلها */
-        }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #eee;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      z-index: 1000;
+    }
 
-        .box1:hover {
-            background-color: rgb(140, 230, 180);
-        }
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #333;
+      text-decoration: none;
+    }
 
-        .box2 {
-            margin-top: 50px;
-            text-align: center;
-        }
+    .dropdown-content a:hover {
+      background-color: #bbb;
+    }
 
-        .box2 a {
-            text-decoration: none;
-            color: #5865F2;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        .box2 b {
-            color: #000;
-        }
-
-        @media (max-width: 500px) {
-            .box1 {
-                flex: 1 1 100%; /* الأزرار تأخذ كامل العرض على الشاشات الصغيرة */
-            }
-        }
-    </style>
+    /* إظهار القائمة عند المرور */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <h1>Sal3m Tools</h1>
-    <h3>اختر الخدمة التي تريدها</h3>
-    <hr>
+  <!-- شريط علوي -->
+  <div class="navbar">
+    <a href="home.html"><img src="icon.png" alt="logo"></a>
+    <a href="home.html">Home</a>
 
-    <div class="buttons-container">
-        <a class="box1" href="pubg.html">
-            <img src="logo_UC.png" alt="PUBG">
-            شدات ببجي
-        </a>
-        <a class="box1" href="freefire.html">
-            <img style="width: 80px;" src="freefire.png" alt="Free Fire">
-            جواهر فري فاير
-        </a>
+    <!-- ألعاب -->
+    <div class="dropdown">
+      <a href="#">Games ▾</a>
+      <div class="dropdown-content">
+        <a href="pubg.html">PUBG</a>
+        <a href="freefire.html">Free Fire</a>
+        
+      </div>
     </div>
 
-    <div class="box2">
-        <a href="https://discord.gg/pA7qqtWPM6">discord</a>
-        <a href="https://wa.me/972568037990">whatsapp</a>
-        <b>للتواصل</b>
+    <!-- أدوات -->
+    <div class="dropdown">
+      <a href="#">Tools ▾</a>
+      <div class="dropdown-content">
+        <a href="">youtube downloader</a>
+      </div>
     </div>
+
+    <a href="#">About</a>
+  </div>
+
+  <!-- محتوى الصفحة -->
+  <div style="padding:20px;">
+    <h1>Welcome to Sal3m Tools</h1>
+    <p>قريبا كل شيء.</p>
+  </div>
 </body>
 </html>
 
