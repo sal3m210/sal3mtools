@@ -100,7 +100,7 @@
     <div class="dropdown">
       <a href="#">Tools ▾</a>
       <div class="dropdown-content">
-        <a downloader href="https://download1652.mediafire.com/um3gdqc9u7wgwH_teExClePHGLWWDCc8Nw0uufMjSAOqEWvxxkQwMHntPo0AxOc08aoJoGjd4hTKUmvMBNqBxf0lJeVNMbuyXIbNr2nmvWYIQeldya74CQ1uk5J1bK5UUYHt9BpOfEjd_Gq7GWXvWfJQrbRp3O1gqFE92EzOnhLnqScZ/8ydhuz78tc6yrmy/download.rar">youtube downloader</a>
+        <a href="">youtube downloader</a>
       </div>
     </div>
 
@@ -108,12 +108,158 @@
   </div>
 
   <!-- محتوى الصفحة -->
-  <div style="padding:20px;">
-    <h1>Welcome to Sal3m Tools</h1>
-    <p>قريبا كل شيء.</p>
+<style>
+  .section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 90%;                 /* ياخد نسبة من النافذة */
+    max-width: 1200px;          /* حد أقصى على الشاشات الكبيرة */
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    transition: 0.3s;
+  }
+
+  .section:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+
+  .section img {
+    flex: 1;                    /* الصورة تاخد نسبة */
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .section .info {
+    flex: 2;                    /* النص ياخد مساحة أكبر */
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+  }
+
+  .section .info h2 {
+    font-size: clamp(20px, 2.5vw, 32px);  /* الخط يتغير حسب حجم الشاشة */
+    margin-bottom: 12px;
+    color: #222;
+  }
+
+  .section .info p {
+    font-size: clamp(14px, 1.5vw, 18px);  /* مرن برضه */
+    line-height: 1.7;
+    color: #555;
+  }
+
+  /* موبايل */
+  @media (max-width: 768px) {
+    .section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .section img {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="section">
+  <img src="img.webp" alt="شحن عملات">
+  <div class="info">
+    <h2>شحن عملات الألعاب</h2>
+    <p>
+      <strong>احصل على شحن سريع وآمن</strong> لجميع الألعاب بأسعار مميزة.  
+      الخدمة متوفرة <strong>24/7</strong> مع ضمان وصول فوري وموثوقية عالية.
+    </p>
   </div>
+</div>
+
+<!--فاصل-->
+
+<style>
+  .section1 {
+    display: flex;
+    flex-direction: row-reverse;  /* يعكس الاتجاه (الصورة يمين) */
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    transition: 0.3s;
+  }
+
+  .section1:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+
+  .section1 img {
+    
+    width: 30%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .section1 .info {
+    flex: 2;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+  }
+
+  .section1 .info h2 {
+    font-size: clamp(20px, 2.5vw, 32px);
+    margin-bottom: 12px;
+    color: #222;
+  }
+
+  .section1 .info p {
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.7;
+    color: #555;
+  }
+
+  /* موبايل */
+  @media (max-width: 768px) {
+    .section1 {
+      flex-direction: column; /* بالصغير الصورة فوق */
+      text-align: center;
+    }
+
+    .section1 img {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="section1">
+  <img  src="icon.png" alt="شحن عملات">
+  <div class="info1">
+    <h1>ادوات برمجية</h1>
+    <p>
+     ادوات برمجية تساعدك في استخدام الحاسوب , بشكل امن , مثل اداة تنزيل فيديوهات من الانترنت فقط من الرابط
+
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+
 </body>
 </html>
+
 
 
 
